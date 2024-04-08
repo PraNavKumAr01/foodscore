@@ -6,6 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 import boto3
+from fastapi.middleware.cors import CORSMiddleware
 
 # Set AWS credentials and region
 os.environ['AWS_ACCESS_KEY_ID'] = "AKIAUY4SWGEBYINYJTWI"
@@ -13,6 +14,15 @@ os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
 os.environ['AWS_DEFAULT_REGION'] = "ap-south-1"
 
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow access from any origin
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
 
 # Initialize Textract client
 textract_client = boto3.client('textract')
