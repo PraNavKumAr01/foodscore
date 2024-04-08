@@ -15,10 +15,14 @@ os.environ['AWS_DEFAULT_REGION'] = "ap-south-1"
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+]
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow access from any origin
+    allow_origins=origins,  # Allow access from any origin
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers
