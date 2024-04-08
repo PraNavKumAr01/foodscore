@@ -1,5 +1,6 @@
 fastapi
 uvicorn
 boto3
+langchain
 langchain-google-genai
 pydantic
