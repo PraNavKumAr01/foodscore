@@ -13,9 +13,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Set AWS credentials and region
-os.environ['AWS_ACCESS_KEY_ID'] = os.getenv('AWS_ACCESS_KEY_ID')
-os.environ['AWS_SECRET_ACCESS_KEY'] = os.getenv('AWS_SECRET_ACCESS_KEY')
-os.environ['AWS_DEFAULT_REGION'] = os.getenv('AWS_REGION')
+os.environ['AWS_ACCESS_KEY_ID'] = "AKIAUY4SWGEBYINYJTWI"
+os.environ['AWS_SECRET_ACCESS_KEY'] = "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"
+os.environ['AWS_DEFAULT_REGION'] = "ap-south-1"
 
 app = FastAPI()
 
@@ -35,7 +35,7 @@ app.add_middleware(
 # Initialize Textract client
 textract_client = boto3.client('textract')
 
-os.environ["GOOGLE_API_KEY"] = os.getenv('GOOGLE_API_KEY')
+os.environ["GOOGLE_API_KEY"] = "AIzaSyC9L2qLCTWBeQ9J2odAMz-yjXq3DzP6oOg"
 llm = ChatGoogleGenerativeAI(model="gemini-pro")
 
 def extract_text_from_image(image_bytes):
