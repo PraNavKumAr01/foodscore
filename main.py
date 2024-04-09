@@ -7,10 +7,6 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 import boto3
 from fastapi.middleware.cors import CORSMiddleware
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Set AWS credentials and region
 os.environ['AWS_ACCESS_KEY_ID'] = "AKIAUY4SWGEBYINYJTWI"
