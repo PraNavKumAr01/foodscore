@@ -35,7 +35,7 @@ app.add_middleware(
 # Initialize Textract client
 textract_client = boto3.client('textract')
 
-os.environ["GOOGLE_API_KEY"] = os.getenv('GOOGLE_API_KEY)
+os.environ["GOOGLE_API_KEY"] = os.getenv('GOOGLE_API_KEY')
 llm = ChatGoogleGenerativeAI(model="gemini-pro")
 
 def extract_text_from_image(image_bytes):
